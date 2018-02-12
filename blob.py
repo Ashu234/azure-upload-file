@@ -6,12 +6,13 @@ import string, random, requests
 
 app = Flask(__name__, instance_relative_config=True)
 
-app.config.from_pyfile('config.py')
-account = app.config['ACCOUNT']   # Azure account name
-key = app.config['STORAGE_KEY']      # Azure Storage account access key  
-container = app.config['CONTAINER'] # Container name
+#app.config.from_pyfile('config.py')
+#account = app.config['ACCOUNT']   # Azure account name
+#key = app.config['STORAGE_KEY']      # Azure Storage account access key  
+#container = app.config['CONTAINER'] # Container name
+container = 'ashu-blob-container'
 
-blob_service = BlockBlobService(account_name=account, account_key=key)
+blob_service = BlockBlobService(account_name='ashuazurestorage', account_key='HGvsHgPPFOp64gztvR6B9g+RNUUqzwhl+aNid8wpwca1uwejBMEhyVkP3oev1SKEnI5eeq4EIXWfcvzWjxAjuQ==')
 
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
